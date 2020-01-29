@@ -9,3 +9,11 @@ body {
 .allergies {
   font-weight: bold;
 }
+
+#burgers {
+  background-color: black;
+  color: white;
+}
+
+#customerinfo {
+}
