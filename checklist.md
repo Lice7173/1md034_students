@@ -28,8 +28,8 @@ Create an index.html file which contains:
 	- [X] E-Mail Address
 	- [X] Street
 	- [X] House Number (only allowing numbers in this field)
-	- [] Gender (male, female, do not wish to provide as radio buttons)
-- [ ] A button to place the order
+	- [X] Gender (male, female, do not wish to provide as radio buttons)
+- [X] A button to place the order
 
 ## 03 CSS
 
@@ -37,8 +37,8 @@ Create an index.html file which contains:
 
 Add the following style/behaviour to your website (mostly in style.css but also requiring changes in index.html):
 - [X] Define a base line font for your site by putting the style rule on "body"
-- [ ] Define a larger base line font size
-- [ ] A CSS rule to make the allergy information bold
+- [X] Define a larger base line font size
+- [X] A CSS rule to make the allergy information bold
 - [ ] Define text and background color for one of your two sections (burger selection and customer information)
 - [ ] Create an empty style definition for the section with unchanged text and background
 - [ ] Change the cursor and background when hovering over the order button
