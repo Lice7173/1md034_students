@@ -3,7 +3,6 @@ body {
     color: Grey;
     text-align: Center;
     font-size: 130%;
-
 }
 
 .allergies {
@@ -21,6 +20,7 @@ body {
 button:hover {
 background-color: green;
 cursor: pointer;
+margin: 0 auto;
 }
 
 
@@ -31,4 +31,13 @@ input[type]:hover{
 
 select{
 cursor: pointer;
+}
+
+table{
+  width: 40%;
+  height: 70%;
+}
+
+ul{
+  text-align:left;
 }
