@@ -17,3 +17,18 @@ body {
 
 #customerinfo {
 }
+
+button:hover {
+background-color: green;
+cursor: pointer;
+}
+
+
+input[type]:hover{
+  background-color: Grey;
+  cursor: pointer;
+}
+
+select{
+cursor: pointer;
+}
