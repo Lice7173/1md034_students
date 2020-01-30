@@ -17,15 +17,20 @@ body {
 #customerinfo {
 }
 
+
 button:hover {
 background-color: green;
 cursor: pointer;
 margin: 0 auto;
 }
 
+button {
+  margin: 20px 2px 3px 4px;
+}
+
 
 input[type]:hover{
-  background-color: Grey;
+  background-color: orange;
   cursor: pointer;
 }
 
@@ -40,4 +45,9 @@ table{
 
 ul{
   text-align:left;
+}
+
+section{
+  margin: 1px 2px 3px 4px;
+  padding: 1px 2px 4px;
 }
