@@ -24,7 +24,7 @@ body {
 
 #customerinfo {
   border: 2px dashed grey;
-  margin: 1px 7px 1px 7px;
+  margin: 1px 6px 1px 6px;
   padding: 1px 2px 4px;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 header{
-  margin: 1px 2px 1px 2px;
+  margin: 1px 0px 1px 0px;
   height: auto;
   overflow:hidden;
   width: 100%;
@@ -82,14 +82,11 @@ section{
   padding: 1px 9px 100px;
 }
 
-
-
-
 .myBurgers {
      display: grid;
      grid-gap: 10px;
      border: 10px double white;
-     grid-template-columns: 410px 410px 410px;
+     grid-template-columns: 400px 400px 400px;
      /*background-color: black;*/
      color: white;
  }
