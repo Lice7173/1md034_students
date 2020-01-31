@@ -9,6 +9,13 @@ body {
   font-weight: bold;
 }
 
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 #burgers {
   background-color: black;
   color: white;
@@ -74,3 +81,34 @@ section{
   margin: 1px 2px 1px 4px;
   padding: 1px 9px 100px;
 }
+
+
+
+
+.myBurgers {
+     display: grid;
+     grid-gap: 10px;
+     border: 10px double white;
+     grid-template-columns: 410px 410px 410px;
+     /*background-color: black;*/
+     color: white;
+ }
+
+ .box {
+     background-color: black;
+     color: #fff;
+     border-radius: 5px;
+     padding: 20px;
+     font-size: 100%;
+
+ }
+
+ .a {
+     grid-column: 1;
+ }
+ .b {
+     grid-column: 2;
+ }
+ .c {
+     grid-column: 3;
+ }
