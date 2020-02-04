@@ -1,4 +1,4 @@
-let burgers = [theSaucyBurger.name, theGoodBurger.name, theTTTBurger.name, livsSpecialBurger.name, theStrangeBurger.name]
+//let burgers = [theSaucyBurger.name, theGoodBurger.name, theTTTBurger.name, livsSpecialBurger.name, theStrangeBurger.name]
 
 /*const vm = new Vue({
   el: '#myID',
@@ -7,12 +7,12 @@ let burgers = [theSaucyBurger.name, theGoodBurger.name, theTTTBurger.name, livsS
   }
 })*/
 
-const vm = new Vue({
+/*const vm = new Vue({
   el: '#myID',
   data: {
     burgers: burgers
   }
-})
+})*/
 
 //I WROTE THE VUE PART IN HTML LIKE THIS:S
 /*

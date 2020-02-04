@@ -82,6 +82,10 @@ section{
   padding: 1px 9px 100px;
 }
 
+/*.column {
+grid-template-columns: 400px 400px 400px;
+}*/
+
 .myBurgers {
      display: grid;
      grid-gap: 10px;
