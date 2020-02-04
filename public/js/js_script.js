@@ -15,7 +15,7 @@ function menuItem(name, kCal, allergies, pathToImage) {
 
 let theSaucyBurger = new menuItem("The saucy burger", "500 kCal", true, "");
 
-let Id = document.getElementById("myID");
+/*let Id = document.getElementById("myID");
 let saucyBurger = document.createElement('h3');
 let goodBurger = document.createElement('h3');
 let tTTBurger = document.createElement('h3');
@@ -32,7 +32,7 @@ Id.appendChild(saucyBurger);
 Id.appendChild(goodBurger);
 Id.appendChild(tTTBurger);
 Id.appendChild(livsBurger);
-Id.appendChild(strangeBurger);
+Id.appendChild(strangeBurger);*/
 
 console.log(theSaucyBurger.returnNameAndkCal());
 
@@ -48,3 +48,22 @@ console.log(livsSpecialBurger.returnNameAndkCal());
 
 let theStrangeBurger = new menuItem("The strange burger", "420 kCal", true, "");
 console.log(theStrangeBurger.returnNameAndkCal());
+
+
+let menu = [theSaucyBurger, theGoodBurger, theTTTBurger, livsSpecialBurger, theStrangeBurger]
+
+let myElement = document.getElementById("myID");
+for (let i = 0 ; i< menu.length ; i++)
+{
+        let listItem = document.createElement("li");
+        let listValue = document.createTextNode(menu[i].name);
+        listItem.appendChild(listValue);
+        myElement.appendChild(listItem);
+
+     if (menu[i].allergies != false){
+      let listItem = document.createElement("span");
+        let listValue = document.createTextNode(menu[i].allergies);
+        listItem.appendChild(listValue);
+        myElement.appendChild(listItem);
+     }
+}

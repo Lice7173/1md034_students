@@ -13,3 +13,18 @@ const vm = new Vue({
     burgers: burgers
   }
 })
+
+//I WROTE THE VUE PART IN HTML LIKE THIS:S
+/*
+<div id="myID">
+    <h1>Välj en burgare</h1>
+  <ul>
+     <li v-for="burger in burgers">
+      {{ burger.name }}
+      <p v-if="burger.allergies != false">
+      {{burger.allergies}}
+      </p>
+     </li>
+   </ul>
+</div>
+*/
