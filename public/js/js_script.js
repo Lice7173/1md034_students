@@ -50,6 +50,7 @@ let theStrangeBurger = new menuItem("The strange burger", "420 kCal", true, "");
 console.log(theStrangeBurger.returnNameAndkCal());
 
 
+/*
 let myElement1 = document.getElementById("burger1");
 let myImage1 = document.createElement("img");
 let myHeader1 = document.createElement("p");
@@ -129,7 +130,7 @@ myInfo3.appendChild(listElem333);
 
 myElement3.appendChild(myHeader3);
 myElement3.appendChild(myImage3);
-myElement3.appendChild(myInfo3);
+myElement3.appendChild(myInfo3);*/
 
 
 
