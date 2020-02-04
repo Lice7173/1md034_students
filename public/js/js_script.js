@@ -1,4 +1,4 @@
-function menuItem(name, kCal, allergies, pathToImage) {
+/*function menuItem(name, kCal, allergies, pathToImage) {
   this.name = name;
   this.kCal = kCal;
   this.allergies = allergies;
@@ -13,7 +13,7 @@ function menuItem(name, kCal, allergies, pathToImage) {
   }
 }
 
-let theSaucyBurger = new menuItem("The saucy burger", "500 kCal", true, "");
+let theSaucyBurger = new menuItem("The saucy burger", "500 kCal", true, "");*/
 
 /*let Id = document.getElementById("myID");
 let saucyBurger = document.createElement('h3');
@@ -34,6 +34,7 @@ Id.appendChild(tTTBurger);
 Id.appendChild(livsBurger);
 Id.appendChild(strangeBurger);*/
 
+/*
 console.log(theSaucyBurger.returnNameAndkCal());
 
 let theGoodBurger = new menuItem("The good burger", "400 kCal", true, "");
@@ -47,7 +48,7 @@ let livsSpecialBurger = new menuItem("Liv's special burger", "450 kCal", true, "
 console.log(livsSpecialBurger.returnNameAndkCal());
 
 let theStrangeBurger = new menuItem("The strange burger", "420 kCal", true, "");
-console.log(theStrangeBurger.returnNameAndkCal());
+console.log(theStrangeBurger.returnNameAndkCal());*/
 
 
 /*
