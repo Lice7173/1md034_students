@@ -28,6 +28,7 @@
     {{item}}
   </li>
   </ul>
+  <input type="checkbox" value="YES" id="fstBurgerCheck" name="NO">I want this burger!</option>
 </div>
 
 <div id="burger2" class="box b">
@@ -38,6 +39,7 @@
     {{item}}
   </li>
 </ul>
+<input type="checkbox" value="YES" id="sndBurgerCheck" name="NO">I want this burger!</option>
 </div>
 
 <div id="burger3" class="box c">
@@ -48,6 +50,7 @@
     {{item}}
   </li>
   </ul>
+  <input type="checkbox" value="YES" id="thrdBurgerCheck" name="NO" >I want this burger!</option>
 </div>
 
 </div>
@@ -111,44 +114,58 @@
 
 <p>
     <label for="Full name">Full name</label><br>
-    <input type="text" id="firstname and lastname" name="fn" required="required" placeholder="First and last name" />
+    <input v-model="fullName" type="text" id="fullName" name="fn" required="required" placeholder="First and last name" />
 </p>
 <p>
     <label for="Email:">Email</label><br>
-    <input type="email" id="Email" name="ln" placeholder="Email" />
+    <input v-model="email" type="email" id="email" name="ln" placeholder="Email" />
 </p>
 
 <p>
     <label for="Street">Street</label><br>
-    <input type="text" id="Street" name="fn" required="required" placeholder="Street" />
+    <input v-model="street" type="text" id="street" name="fn" required="required" placeholder="Street" />
 </p>
 
 <p>
     <label for="House numbers">House number</label><br>
-    <input type="number" id="House numbers" name="fn" required="required" placeholder="House number" />
+    <input v-model="houseNumber" type="number" id="houseNumber" name="fn" required="required" placeholder="House number" />
 </p>
 
 <p>
     <label for="recipient">Payment</label><br />
-    <select id="recipient" name="rcp">
-        <option>Mastercard</option>
-        <option selected>Swish</option>
-        <option>Invoice</option>
-        <option>Send cash</option>
-        <option>Amex</option>
+    <select v-model="pay" id="recipient" name="rcp">
+        <option value="mastercard">Mastercard</option>
+        <option value="swish" selected>Swish</option>
+        <option value="invoice">Invoice</option>
+        <option value="send cash">Send cash</option>
+        <option value="amex">Amex</option>
     </select>
 </p>
 
 <p>
-    <label for="Gender">Gender</label><br />
-        <input type="radio" value="value" id="female" name="gender">female</option>
-        <input type="radio" value="value" id="male" name="gender">male</option>
-        <input checked="checked" value="value" type="radio" id="other" name="gender">other</option>
+    <label id="gender" for="Gender">Gender</label><br />
+        <input v-model="gender" type="radio" value="gender: female" id="female" name="gender">female</option>
+        <input v-model="gender" type="radio" value="gender: male" id="male" name="gender">male</option>
+        <input v-model="gender" checked="checked" value="gender: other" type="radio" id="other" name="gender">other</option>
 </p>
 
 </section>
 
-<button type="submit"><img src="http://distributionsyd.se/wp-content/uploads/2017/02/pil-gron-png.png" width="50" /> SEND INFO!</button>
+<div id="orders">
+<button id="myButton" v-on:click="markDone" type="submit"><img src="http://distributionsyd.se/wp-content/uploads/2017/02/pil-gron-png.png" width="50" /> SEND INFO! </button>
+<p>
+{{fullName}} <br>
+{{email}}<br>
+{{street}}<br>
+{{houseNumber}}<br>
+{{gender}}<br>
+{{pay}}<br>
+{{fstBurger}}<br>
+{{sndBurger}}<br>
+{{trdBurger}}
+</p>
+</div>
+
 
   </main>
 <footer>Email: livsburgers@gmail.com <br /> Telephone: 070894634282345678</footer>

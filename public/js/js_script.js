@@ -1,3 +1,33 @@
+
+/*let myButton = document.getElementById('myButton')
+//myButton.addEventListener("click", clickFunction);
+myButton.onclick = function () {
+    var name = document.getElementById("fullName").value;
+    var email = document.getElementById("email").value;
+    var street = document.getElementById("street").value;
+    var houseNumber = document.getElementById("houseNumber").value;
+
+    var female = document.getElementById("female").value;
+    var male = document.getElementById("male").value;
+    var other = document.getElementById("other").value;
+
+    var array = [name, email, street, houseNumber];
+    console.log("Button clicked!");
+    console.log(array);
+
+    //någon slags if sats huruvuda gender knappen är itryckt!
+
+
+} */
+
+
+
+
+
+
+
+
+
 /*function menuItem(name, kCal, allergies, pathToImage) {
   this.name = name;
   this.kCal = kCal;
