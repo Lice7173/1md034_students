@@ -134,6 +134,7 @@
                 y: vm.orderObject.y,
               },
               orderItems: [button.fstBurger, button.sndBurger, button.thrdBurger],
+              custInfo: [button.fullName, button.email],
             });
           },
       },
