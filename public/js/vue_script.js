@@ -1,5 +1,40 @@
   window.onload = function (){
 
+    /* jslint es6:true, indent: 2 */
+    /* global Vue, io */
+    /* exported vm */
+    'use strict';
+    const socket = io();
+
+    /* eslint-disable-next-line no-unused-vars */
+    const vm = new Vue({
+      el: '#dots',
+      data: {
+        orders: {},
+        orderObject: {x:0, y:0},
+
+      },
+
+      methods: {
+        displayOrder: function(event) {
+          /* When you click in the map, a click event object is sent as parameter
+           * to the function designated in v-on:click (i.e. this one).
+           * The click event object contains among other things different
+           * coordinates that we need when calculating where in the map the click
+           * actually happened. */
+          let offset = {
+            x: event.currentTarget.getBoundingClientRect().left,
+            y: event.currentTarget.getBoundingClientRect().top,
+          };
+          vm.orderObject =
+          {x: event.clientX - 10 - offset.x,
+          y: event.clientY - 10 - offset.y
+        };
+      },
+      },
+    });
+
+
   const burger1 = new Vue({
     el: '#burger1',
     data: {
@@ -30,13 +65,24 @@
 
   const button = new Vue({
       el: '#orders',
+      data: {
+        fullName: "",
+        email: "",
+        gender: "",
+        pay: "",
+        fstBurger: "",
+        sndBurger: "",
+        thrdBurger: "",
+        count: 0,
+
+      },
       methods: {
           markDone: function() {
                       console.log("Button clicked!");
                       button.fullName = "Full name: " + document.getElementById("fullName").value;
                       button.email = "Email: " + document.getElementById("email").value;
-                      button.street = "Street: " + document.getElementById("street").value;
-                      button.houseNumber = "Housenumber: " + document.getElementById("houseNumber").value;
+                      //button.street = "Street: " + document.getElementById("street").value;
+                      //button.houseNumber = "Housenumber: " + document.getElementById("houseNumber").value;
                       button.pay = "Payment: " + document.getElementById("recipient").value;
 
                       if (document.getElementById("female").checked){
@@ -50,53 +96,48 @@
                       }
 
                       if (document.getElementById("fstBurgerCheck").checked){
-                        button.fstBurger = "The Saucy Burger: " + document.getElementById("fstBurgerCheck").value;
+                        button.fstBurger = document.getElementById("fstBurgerCheck").value;
                       }
                       else {
-                        button.fstBurger = "The Saucy Burger: " + document.getElementById("fstBurgerCheck").name;
+                        button.fstBurger = "";
                       }
 
                       if (document.getElementById("sndBurgerCheck").checked){
-                        button.sndBurger = "The Good Burger: " + document.getElementById("sndBurgerCheck").value;
+                        button.sndBurger = document.getElementById("sndBurgerCheck").value;
                       }
                       else {
-                        button.sndBurger = "The Good Burger: " + document.getElementById("sndBurgerCheck").name;;
+                        button.sndBurger = "";
                       }
 
                       if (document.getElementById("thrdBurgerCheck").checked){
-                        button.trdBurger = "The TTT Burger: " + document.getElementById("thrdBurgerCheck").value;
+                        button.thrdBurger = document.getElementById("thrdBurgerCheck").value;
                       }
                       else {
-                        button.trdBurger = "The Good Burger: " + document.getElementById("sndBurgerCheck").name;
+                        button.thrdBurger = "";
                       }
+          },
+          /*getNext: function() {
+            this.count++;
+            return count;
+          },*/
+          addOrder: function() {
+            /* When you click in the map, a click event object is sent as parameter
+             * to the function designated in v-on:click (i.e. this one).
+             * The click event object contains among other things different
+             * coordinates that we need when calculating where in the map the click
+             * actually happened. */
 
-
-          }
+            socket.emit('addOrder', {
+              orderId: this.count++, //this.getNext(),
+              details: {
+                x: vm.orderObject.x,
+                y: vm.orderObject.y,
+              },
+              orderItems: [button.fstBurger, button.sndBurger, button.thrdBurger],
+            });
+          },
       },
-      data: {
-        fullName: "",
-        email: "",
-        street: "",
-        houseNumber: "",
-        gender: "",
-        pay: "",
-        fstBurger: "",
-        sndBurger: "",
-        trdBurger: "",
-
-      }
   });
-
-  /*const customerINFO = new Vue({
-      el: '#customerinfo',
-      data: {
-          fullName: "",
-          email: "",
-          street: "",
-          houseNumber: ""
-      }
-  });*/
-
 
   const gender = new Vue({
       el: '#gender',
@@ -104,7 +145,6 @@
           gender: ""
       }
   });
-}
 
 const pay = new Vue({
     el: '#recipient',
@@ -112,58 +152,4 @@ const pay = new Vue({
         pay: ""
     }
 });
-
-
-
-  /*const email = new Vue({
-      el: '#customerinfo',
-      data: {
-          email: email
-      }
-  });
-
-  const street = new Vue({
-      el: '#customerinfo',
-      data: {
-          street: street
-      }
-  });
-
-  const housenr = new Vue({
-      el: '#customerinfo',
-      data: {
-          housenr: housenr
-      }
-  });*/
-
-
-  //let burgers = [theSaucyBurger.name, theGoodBurger.name, theTTTBurger.name, livsSpecialBurger.name, theStrangeBurger.name]
-
-  /*const vm = new Vue({
-    el: '#myID',
-    data: {
-      arbitraryVariableName: 'Välj en burgare:' + ' ' + new Date()
-    }
-  })*/
-
-  /*const vm = new Vue({
-    el: '#myID',
-    data: {
-      burgers: burgers
-    }
-  })*/
-
-  //I WROTE THE VUE PART IN HTML LIKE THIS:S
-  /*
-  <div id="myID">
-      <h1>Välj en burgare</h1>
-    <ul>
-       <li v-for="burger in burgers">
-        {{ burger.name }}
-        <p v-if="burger.allergies != false">
-        {{burger.allergies}}
-        </p>
-       </li>
-     </ul>
-  </div>
-  */
+}

@@ -7,6 +7,7 @@
         <script type="text/javascript" src="js/menu.js"></script>
         <script src="js/js_script.js" defer></script>
        <script src="https://vuejs.org/js/vue.js"></script>
+       <script src="/socket.io/socket.io.js" defer></script>
         <script src="js/vue_script.js"></script>
     </head>
     <body>
@@ -28,7 +29,7 @@
     {{item}}
   </li>
   </ul>
-  <input type="checkbox" value="YES" id="fstBurgerCheck" name="NO">I want this burger!</option>
+  <input type="checkbox" value="The Saucy Burger" id="fstBurgerCheck" name="NO">I want this burger!</option>
 </div>
 
 <div id="burger2" class="box b">
@@ -39,7 +40,7 @@
     {{item}}
   </li>
 </ul>
-<input type="checkbox" value="YES" id="sndBurgerCheck" name="NO">I want this burger!</option>
+<input type="checkbox" value="The Good Burger" id="sndBurgerCheck" name="NO">I want this burger!</option>
 </div>
 
 <div id="burger3" class="box c">
@@ -50,7 +51,7 @@
     {{item}}
   </li>
   </ul>
-  <input type="checkbox" value="YES" id="thrdBurgerCheck" name="NO" >I want this burger!</option>
+  <input type="checkbox" value="The TTT Burger" id="thrdBurgerCheck" name="NO" >I want this burger!</option>
 </div>
 
 </div>
@@ -122,16 +123,6 @@
 </p>
 
 <p>
-    <label for="Street">Street</label><br>
-    <input v-model="street" type="text" id="street" name="fn" required="required" placeholder="Street" />
-</p>
-
-<p>
-    <label for="House numbers">House number</label><br>
-    <input v-model="houseNumber" type="number" id="houseNumber" name="fn" required="required" placeholder="House number" />
-</p>
-
-<p>
     <label for="recipient">Payment</label><br />
     <select v-model="pay" id="recipient" name="rcp">
         <option value="mastercard">Mastercard</option>
@@ -149,20 +140,30 @@
         <input v-model="gender" checked="checked" value="gender: other" type="radio" id="other" name="gender">other</option>
 </p>
 
+  <h3> Click in the map! </h3>
+  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+  <div class="view-box">
+    <div id="dots" v-on:click="displayOrder">
+        <div
+          v-bind:style="{ left: orderObject.x + 'px', top: orderObject.y + 'px'}">
+          {{"T"}}
+        </div>
+    </div>
+  </div>
+
 </section>
 
+
 <div id="orders">
-<button id="myButton" v-on:click="markDone" type="submit"><img src="http://distributionsyd.se/wp-content/uploads/2017/02/pil-gron-png.png" width="50" /> SEND INFO! </button>
+<button id="myButton" v-on:click="markDone();addOrder()" type="submit"><img src="http://distributionsyd.se/wp-content/uploads/2017/02/pil-gron-png.png" width="50" /> SEND INFO! </button>
 <p>
 {{fullName}} <br>
 {{email}}<br>
-{{street}}<br>
-{{houseNumber}}<br>
 {{gender}}<br>
 {{pay}}<br>
 {{fstBurger}}<br>
 {{sndBurger}}<br>
-{{trdBurger}}
+{{thrdBurger}}
 </p>
 </div>
 
